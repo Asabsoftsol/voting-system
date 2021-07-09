@@ -87,8 +87,13 @@ main{
 
     .header{
         padding:10px;
-        margin: 10px;
+        margin: 10px 20px;
         border: 1px dashed rgb(192, 192, 192);
+
+        @media screen and (min-width:1200px) {
+            margin: 20px 300px;
+        }
+
         P{
             margin: 20PX 0;
             padding-left: 6px;
@@ -98,12 +103,44 @@ main{
         .container{
            
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
+            align-items: center;
             .section{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 5px;
                 img{
                     height: 150px;
                     border-radius: 4px;
                 }
+                button{
+                    padding: 5px 60px;
+                    border: none;
+                    color: #fff;
+                    background: linear-gradient(50deg,rgb(9, 116, 255),rgb(0, 89, 161));
+                    border-radius: 2px;
+                    cursor: pointer;
+                    transition: background .2s ease-in-out;
+                    font-weight: 800;
+                    &:hover{
+                        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                    }
+                }
+            }
+        }
+        .nota{
+            display: block;
+            margin: 10px auto;
+            padding: 5px 60px;
+            border: none;
+            color: #fff;
+            background: #53b14b;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 800;
+            &:hover{
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             }
         }
     }
