@@ -23,7 +23,7 @@ nav{
 
 // register page styling
 .registerPage{
-    padding: 100px 30px;
+    padding: 100px 10%;
     width: 100%;
     
     .form{
@@ -37,7 +37,18 @@ nav{
 
         form{
             display: inline-grid;
-          
+            width: 100%;
+            .errorMessage{
+                background: #ff2828;
+                color: #fff;
+                text-align: center;
+                padding: 8px;
+                margin-bottom: 20px;
+                border-radius: 2px;
+                box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.22);
+                text-transform: capitalize;
+                }   
+            }
             input{
                 width: 100%;
                 margin: 5px 0;
@@ -47,8 +58,18 @@ nav{
                 padding: 0px 4px;
             }
             button{
-                
+                margin-top: 50px;
+                padding: 16px 50px;
+                border: none;
+                color: #fff;
+                background: linear-gradient(50deg,rgb(9, 116, 255),rgb(0, 89, 161));
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background .2s ease-in-out;
+                font-weight: 800;
+                &:hover{
+                    background: linear-gradient(50deg,rgb(0, 89, 161),rgb(9, 116, 255));
+                }
             }
         }
     }
-}

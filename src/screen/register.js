@@ -9,15 +9,17 @@ function Register() {
     const [name, setName] = useState('')
     const [id, setId] = useState('')
     const [email, setEmail] = useState('')
-    // const [name,setName] = useState('')
-
+    const [message, setMessage] = useState('')
+    const [disable, setDisable] = useState('')
     const handleForm = (e) => {
         e.preventDefault()
 
         // check all input is not empty
         if (name === '' || id === '') {
-            alert('pleae fill all detail')
+            setMessage('pleae fill all detail')
+            disable = true
         }
+
         else {
             setEmail('')
             setId('')
@@ -30,16 +32,21 @@ function Register() {
         <div className="registerPage">
             <div className="form">
                 <form onSubmit={handleForm}>
-                    <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                    <div className={message.length > 2 ? 'errorMessage' : false}>
+                        {message}
+                    </div>
+                    <input type="text" placeholder="Name"
+                        value={name} onChange={(e) => setName(e.target.value)}
+                    />
                     <input type="number" placeholder="Registration number"
                         value={id}
                         onChange={(e) => setId(e.target.value)}
                     />
-                    <input type="number" placeholder="Email"
+                    <input type="email" placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <button type="submit">Next</button>
+                    <button type="submit" disabled={disable ? false : true}>Next</button>
                 </form>
             </div>
         </div>
