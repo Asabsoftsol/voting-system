@@ -1,9 +1,13 @@
 import React from 'react'
+import Navbar from './partials/navbar'
+import Register from './screen/register'
 
-function App(){
+function App() {
     return (
-        <h1>e-voting</h1>
+        <>  
+            <Navbar/>
+            <Register />
+        </>
     )
 }
-
 export default App
