@@ -1,8 +1,11 @@
 import React from 'react'
-
-function App(){
+import Img from '../thanks.png'
+function App() {
     return (
-        <h1>e-voting</h1>
+        <>
+            <h1 className="thanks">Thanks for Voting.</h1>
+            <img src={Img} alt="Thanks" height="200" className="thanks-img"/>
+        </>
     )
 }
 
