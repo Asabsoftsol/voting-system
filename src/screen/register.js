@@ -19,6 +19,9 @@ function Register() {
             alert('pleae fill all detail')
         }
         else {
+            setEmail('')
+            setId('')
+            setName('')
             alert('ok')
         }
     }
