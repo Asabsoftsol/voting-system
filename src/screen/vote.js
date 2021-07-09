@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function App(){
+function Vote() {
+    useEffect(() => {
+        document.title = "Vote"
+    })
     return (
-        <h1>e-voting</h1>
+        <main>
+            <h1>Vote carefully</h1>
+        </main>
     )
 }
 
-export default App
+export default Vote
