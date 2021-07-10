@@ -12,6 +12,10 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 
+
+mongoose.connect()
+
+
 app.use('/api',require('./controllers/index'))
 
 
