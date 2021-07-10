@@ -20,9 +20,9 @@ function Register() {
         if (name === '' || id === '' || email === '' || phone === '') {
             setMessage('pleae fill all detail')
         }
-        if (phone.length < 9 || phone.length > 10) {
-            setMessage('Pleae enter valid phone number')
-        }
+        // if (phone.length < 9 || phone.length > 10) {
+        //     setMessage('Pleae enter valid phone number')
+        // }
         if (id.length < 7 || id.length > 8) {
             setMessage('Please enter valid registration number')
         }
@@ -37,10 +37,10 @@ function Register() {
                 }
             )
             console.log(data)
-            if(data.data.msg === 'error'){
-                setMessage('Pleae enter valid phone number')
+            if(data.data.status === 'error'){
+                setMessage(data.data.msg)
             }
-            if(data.data.msg === 'ok'){
+            if(data.data.status === 'ok'){
                 setEmail('')
                 setId('')
                 setPhone('')
