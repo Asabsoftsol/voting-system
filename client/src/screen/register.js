@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
+import axios from 'axios'
+
 
 function Register() {
     useEffect(() => {
@@ -12,7 +14,7 @@ function Register() {
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
 
-    const handleForm = (e) => {
+    const handleForm = async (e) => {
         e.preventDefault()
         // check all input is not empty
         if (name === '' || id === '' || email === '' || phone === '') {
@@ -25,7 +27,16 @@ function Register() {
             setMessage('Please enter valid registration number')
         }
         else {
-            console.log(name, id, email, phone)
+            const data = await axios.post('http://localhost:3001/api/register',{
+                name,email,phone,id
+            },
+                {
+                    headers: {
+                        'Content-Type':'application/json' 
+                    }
+                }
+            )
+
             setEmail('')
             setId('')
             setPhone('')
