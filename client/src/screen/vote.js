@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { useHistory } from 'react-router-dom'
 
 function Vote() {
     useEffect(() => {
         document.title = "Vote"
     })
+
+    const history = useHistory()
 
     const president1 = useRef()
     const president2 = useRef()
@@ -17,35 +20,43 @@ function Vote() {
     const nota2 = useRef()
     const nota3 = useRef()
     const nota4 = useRef()
+
+
+    const handleVote=async(e)=>{
+        e.preventDefault()
+        console.log(e)
+        history.replace('/thanks')
+    }
+
     return (
         <main>
             <h1>Vote carefully</h1>
 
-            <form>
+            <form onSubmit={handleVote}>
                 <div className="header">
                     <p>President</p>
                     <div className="container">
                         <div className="section one" ref={president1}>
                             {/* change image from here */}
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="candidate" />
                             <b>Arun Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 president2.current.style.display = 'none'
                                 nota1.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={president2}>
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/8.jpg" alt="candidate" />
                             <b>Varun Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 president1.current.style.display = 'none'
                                 nota1.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" ref={nota1} onClick={() => {
+                    <button className="nota" ref={nota1} type="button" onClick={() => {
                         president1.current.style.display = 'none'
                         president2.current.style.display = 'none'
                     }}>NOTA</button>
@@ -57,25 +68,25 @@ function Vote() {
                     <p>Vice President</p>
                     <div className="container">
                         <div className="section one" ref={v_president1}>
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/4.jpg" alt="candidate" />
                             <b>Arun Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 v_president2.current.style.display = 'none'
                                 nota2.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={v_president2}>
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/0.jpg" alt="candidate" />
                             <b>Arun Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 v_president1.current.style.display = 'none'
                                 nota2.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" ref={nota2} onClick={() => {
+                    <button className="nota" type="button" ref={nota2} onClick={() => {
                         v_president1.current.style.display = 'none'
                         v_president2.current.style.display = 'none'
                     }}>NOTA</button>
@@ -85,25 +96,25 @@ function Vote() {
                     <p>General Secretary</p>
                     <div className="container">
                         <div className="section one" ref={g_s1}>
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/8.jpg" alt="candidate" />
                             <b>Arun Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 g_s2.current.style.display = 'none'
                                 nota3.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={g_s2}>
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="candidate" />
                             <b>Arun Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 g_s1.current.style.display = 'none'
                                 nota3.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" ref={nota3} onClick={() => {
+                    <button className="nota" type="button" ref={nota3} onClick={() => {
                         g_s1.current.style.display = 'none'
                         g_s2.current.style.display = 'none'
                     }}>NOTA</button>
@@ -113,25 +124,25 @@ function Vote() {
                     <p>Asst. General Secretary</p>
                     <div className="container">
                         <div className="section one" ref={ag_s1}>
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/2.jpg" alt="candidate" />
                             <b>Arun Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 ag_s2.current.style.display = 'none'
                                 nota4.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={ag_s2}>
-                            <img src="https://avatars.githubusercontent.com/u/48112517?v=4" alt="candidate" />
+                            <img src="https://randomuser.me/api/portraits/lego/0.jpg" alt="candidate" />
                             <b>Pratap Singh</b>
-                            <button onClick={(e) => {
+                            <button type="button" onClick={(e) => {
                                 e.target.innerHTML = 'voted'
                                 ag_s1.current.style.display = 'none'
                                 nota4.current.style.display = 'none'
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" ref={nota4} onClick={() => {
+                    <button className="nota" type="button" ref={nota4} onClick={() => {
                         ag_s1.current.style.display = 'none'
                         ag_s2.current.style.display = 'none'
                     }}>NOTA</button>
