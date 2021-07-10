@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+    height: 70px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.09);
+    .logo{
+        img{
+            height: 70px;
+            padding: 5px 0px;
+        }
+    }
+}
+
+
+
+
+// register page styling
+.registerPage{
+    padding: 100px 10%;
+    width: 100%;
+    
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 20px 2px #3215ce54;
+        border-radius: 10px;
+
+        form{
+            display: inline-grid;
+            width: 100%;
+            .errorMessage{
+                background: #ff2828;
+                color: #fff;
+                text-align: center;
+                padding: 8px;
+                margin-bottom: 20px;
+                border-radius: 2px;
+                box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.22);
+                text-transform: capitalize;
+                }   
+            }
+            input{
+                width: 100%;
+                margin: 5px 0;
+                height: 40px;
+                border: 1px solid rgb(190, 190, 190);
+                border-radius: 4px;
+                padding: 0px 4px;
+            }
+            button{
+                margin-top: 50px;
+                padding: 16px 50px;
+                border: none;
+                color: #fff;
+                background: linear-gradient(50deg,rgb(9, 116, 255),rgb(0, 89, 161));
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background .2s ease-in-out;
+                font-weight: 800;
+                &:hover{
+                    background: linear-gradient(50deg,rgb(0, 89, 161),rgb(9, 116, 255));
+                }
+            }
+        }
+    }
+
+
+// vote page
+main{
+    padding: 10px 0px;
+
+    h1{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 100;
+    }
+
+    .header{
+        padding:10px;
+        margin: 10px 20px;
+        border: 1px dashed rgb(192, 192, 192);
+
+        @media screen and (min-width:1200px) {
+            margin: 20px 300px;
+        }
+
+        P{
+            margin: 20PX 0;
+            padding-left: 6px;
+            font-weight: 800;
+            border-left: 5px solid rgb(26, 125, 255);
+        }
+        .container{
+           
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .section{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 5px;
+                img{
+                    height: 150px;
+                    border-radius: 4px;
+                }
+                button{
+                    padding: 5px 60px;
+                    border: none;
+                    color: #fff;
+                    background: linear-gradient(50deg,rgb(9, 116, 255),rgb(0, 89, 161));
+                    border-radius: 2px;
+                    cursor: pointer;
+                    transition: background .2s ease-in-out;
+                    font-weight: 800;
+                    &:hover{
+                        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                    }
+                }
+            }
+        }
+        .nota{
+            display: block;
+            margin: 10px auto;
+            padding: 5px 60px;
+            border: none;
+            color: #fff;
+            background: #53b14b;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 800;
+            &:hover{
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    }
+} 
+
+.thanks{
+    text-align: center;
+    margin-top: 100px;
+}
+.thanks-img{
+    display: block;
+    margin: 0px auto;
+}
