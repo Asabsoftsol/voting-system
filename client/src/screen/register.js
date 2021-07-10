@@ -36,13 +36,17 @@ function Register() {
                     }
                 }
             )
-
-            setEmail('')
-            setId('')
-            setPhone('')
-            setName('')
-            setMessage('')
-            history.replace('/vote')
+            console.log(data)
+            if(data.data.msg === 'error'){
+                setMessage('Pleae enter valid phone number')
+            }
+            if(data.data.msg === 'ok'){
+                setEmail('')
+                setId('')
+                setPhone('')
+                setName('')
+                history.replace('/vote')
+            }
         }
     }
 
