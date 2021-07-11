@@ -6,7 +6,7 @@ function App() {
       </nav>
 
 
-    <h2>Vote counter</h2>
+      <h2>Vote counter</h2>
 
       <div className="president">
         <p>President</p>
@@ -80,7 +80,7 @@ function App() {
         </div>
       </div>
 
-
+      <p className="footer">© {new Date().getFullYear()}</p>
     </div>
   );
 }
