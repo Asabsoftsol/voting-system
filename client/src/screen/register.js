@@ -16,6 +16,7 @@ function Register() {
 
     const handleForm = async (e) => {
         e.preventDefault()
+        history.replace('/vote')
         // check all input is not empty
         if (name === '' || id === '' || email === '' || phone === '') {
             setMessage('pleae fill all detail')
@@ -54,7 +55,7 @@ function Register() {
         <div className="registerPage">
             <div className="form">
                 <form onSubmit={handleForm}>
-                    <div className={message.length > 2 ? 'errorMessage' : false}>
+                    <div className={ message.length > 2 ? 'errorMessage' : false}>
                         {message}
                     </div>
                     <input type="text" placeholder="Name"
