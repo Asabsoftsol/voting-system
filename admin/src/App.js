@@ -12,11 +12,11 @@ function App() {
         <p>President</p>
         <div className="grid">
           <div className="can1 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate1</h3>
             <span>322</span>
           </div>
           <div className="can2 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate2</h3>
             <span>212</span>
           </div>
           <div className="nota candidate">
@@ -30,11 +30,11 @@ function App() {
         <p>Vice President</p>
         <div className="grid">
           <div className="can1 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate1</h3>
             <span>322</span>
           </div>
           <div className="can2 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate2</h3>
             <span>212</span>
           </div>
           <div className="nota candidate">
@@ -48,11 +48,11 @@ function App() {
         <p>General Secretary</p>
         <div className="grid">
           <div className="can1 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate1</h3>
             <span>322</span>
           </div>
           <div className="can2 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate2</h3>
             <span>212</span>
           </div>
           <div className="nota candidate">
@@ -66,11 +66,11 @@ function App() {
         <p>Asst. General Secretary</p>
         <div className="grid">
           <div className="can1 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate1</h3>
             <span>322</span>
           </div>
           <div className="can2 candidate">
-            <h3>Candidate className</h3>
+            <h3>Candidate2</h3>
             <span>212</span>
           </div>
           <div className="nota candidate">
