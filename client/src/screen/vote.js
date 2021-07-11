@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 
 function Vote() {
@@ -45,7 +45,7 @@ function Vote() {
                             <b>Ram Kundu</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Ram Kundu" is selected. Are You Sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     president2.current.style.display = 'none'
@@ -58,7 +58,7 @@ function Vote() {
                             <b>Abhijit Das</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Abhijit Das" is selected. Are You sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     president1.current.style.display = 'none'
@@ -69,7 +69,7 @@ function Vote() {
                     </div>
                     <button className="nota" ref={nota1} type="button" onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
-                        if (x == true) {
+                        if (x === true) {
                             e.currentTarget.disabled = true
                             president1.current.style.display = 'none'
                             president2.current.style.display = 'none'
@@ -87,7 +87,7 @@ function Vote() {
                             <b>Jina Sharma</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Jina Sharma" is selected. Are You sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     v_president2.current.style.display = 'none'
@@ -100,7 +100,7 @@ function Vote() {
                             <b>Dipika Devi</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Dipika Devi" is selected. Are You sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     v_president1.current.style.display = 'none'
@@ -111,7 +111,7 @@ function Vote() {
                     </div>
                     <button className="nota" type="button" ref={nota2} onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
-                        if (x == true) {
+                        if (x === true) {
                             e.currentTarget.disabled = true
                             v_president1.current.style.display = 'none'
                             v_president2.current.style.display = 'none'
@@ -127,7 +127,7 @@ function Vote() {
                             <b>Morjina Khatun</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Morjina Khatun" is selected. Are You sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     g_s2.current.style.display = 'none'
@@ -140,7 +140,7 @@ function Vote() {
                             <b>Shek Haju Ali</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Shek Haju Ali" is selected. Are You sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     g_s1.current.style.display = 'none'
@@ -151,7 +151,7 @@ function Vote() {
                     </div>
                     <button className="nota" type="button" ref={nota3} onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
-                        if (x == true) {
+                        if (x === true) {
                             e.currentTarget.disabled = true
                             g_s1.current.style.display = 'none'
                             g_s2.current.style.display = 'none'
@@ -167,7 +167,7 @@ function Vote() {
                             <b>Avhinas Chetry</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Avhinas Chetry" is selected. Are You sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     ag_s2.current.style.display = 'none'
@@ -181,7 +181,7 @@ function Vote() {
                             <b>Rahul Sharma</b>
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Rahul Sharma" is selected. Are You sure ?`)
-                                if (x == true) {
+                                if (x === true) {
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     ag_s1.current.style.display = 'none'
@@ -192,7 +192,7 @@ function Vote() {
                     </div>
                     <button className="nota" type="button" ref={nota4} onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
-                        if (x == true) {
+                        if (x === true) {
                             e.currentTarget.disabled = true
                             ag_s1.current.style.display = 'none'
                             ag_s2.current.style.display = 'none'
