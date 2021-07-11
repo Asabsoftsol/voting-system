@@ -1,23 +1,86 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="admin">
+      <nav>
+        <img src="https://www.biswanathcollege.in/wp-content/uploads/2021/02/headerTitle.png" alt="logo" />
+      </nav>
+
+
+    <h2>Vote counter</h2>
+
+      <div className="president">
+        <p>President</p>
+        <div className="grid">
+          <div className="can1 candidate">
+            <h3>Candidate className</h3>
+            <span>322</span>
+          </div>
+          <div className="can2 candidate">
+            <h3>Candidate className</h3>
+            <span>212</span>
+          </div>
+          <div className="nota candidate">
+            <h3>NOTA</h3>
+            <span>212</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="president">
+        <p>Vice President</p>
+        <div className="grid">
+          <div className="can1 candidate">
+            <h3>Candidate className</h3>
+            <span>322</span>
+          </div>
+          <div className="can2 candidate">
+            <h3>Candidate className</h3>
+            <span>212</span>
+          </div>
+          <div className="nota candidate">
+            <h3>NOTA</h3>
+            <span>212</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="president">
+        <p>General Secretary</p>
+        <div className="grid">
+          <div className="can1 candidate">
+            <h3>Candidate className</h3>
+            <span>322</span>
+          </div>
+          <div className="can2 candidate">
+            <h3>Candidate className</h3>
+            <span>212</span>
+          </div>
+          <div className="nota candidate">
+            <h3>NOTA</h3>
+            <span>212</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="president">
+        <p>Asst. General Secretary</p>
+        <div className="grid">
+          <div className="can1 candidate">
+            <h3>Candidate className</h3>
+            <span>322</span>
+          </div>
+          <div className="can2 candidate">
+            <h3>Candidate className</h3>
+            <span>212</span>
+          </div>
+          <div className="nota candidate">
+            <h3>NOTA</h3>
+            <span>212</span>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   );
 }
