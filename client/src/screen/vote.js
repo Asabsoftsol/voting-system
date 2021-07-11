@@ -21,8 +21,11 @@ function Vote() {
     const nota3 = useRef()
     const nota4 = useRef()
 
+    const submitBtn = useRef()
 
-    const handleVote=async(e)=>{
+    // submitBtn.current.disabled = true
+
+    const handleVote = async (e) => {
         e.preventDefault()
         console.log(e)
         history.replace('/thanks')
@@ -39,26 +42,38 @@ function Vote() {
                         <div className="section one" ref={president1}>
                             {/* change image from here */}
                             <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="candidate" />
-                            <b>Arun Pratap Singh</b>
+                            <b>Ram Kundu</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                president2.current.style.display = 'none'
-                                nota1.current.style.display = 'none'
+                                const x = window.confirm(`"Ram Kundu" is selected. Are You Sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    president2.current.style.display = 'none'
+                                    nota1.current.style.display = 'none'
+                                }
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={president2}>
                             <img src="https://randomuser.me/api/portraits/lego/8.jpg" alt="candidate" />
-                            <b>Varun Pratap Singh</b>
+                            <b>Abhijit Das</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                president1.current.style.display = 'none'
-                                nota1.current.style.display = 'none'
+                                const x = window.confirm(`"Abhijit Das" is selected. Are You sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    president1.current.style.display = 'none'
+                                    nota1.current.style.display = 'none'
+                                }
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" ref={nota1} type="button" onClick={() => {
-                        president1.current.style.display = 'none'
-                        president2.current.style.display = 'none'
+                    <button className="nota" ref={nota1} type="button" onClick={(e) => {
+                        const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
+                        if (x == true) {
+                            e.currentTarget.disabled = true
+                            president1.current.style.display = 'none'
+                            president2.current.style.display = 'none'
+                        }
                     }}>NOTA</button>
 
                 </div>
@@ -69,26 +84,38 @@ function Vote() {
                     <div className="container">
                         <div className="section one" ref={v_president1}>
                             <img src="https://randomuser.me/api/portraits/lego/4.jpg" alt="candidate" />
-                            <b>Arun Pratap Singh</b>
+                            <b>Jina Sharma</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                v_president2.current.style.display = 'none'
-                                nota2.current.style.display = 'none'
+                                const x = window.confirm(`"Jina Sharma" is selected. Are You sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    v_president2.current.style.display = 'none'
+                                    nota2.current.style.display = 'none'
+                                }
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={v_president2}>
                             <img src="https://randomuser.me/api/portraits/lego/0.jpg" alt="candidate" />
-                            <b>Arun Pratap Singh</b>
+                            <b>Dipika Devi</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                v_president1.current.style.display = 'none'
-                                nota2.current.style.display = 'none'
+                                const x = window.confirm(`"Dipika Devi" is selected. Are You sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    v_president1.current.style.display = 'none'
+                                    nota2.current.style.display = 'none'
+                                }
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" type="button" ref={nota2} onClick={() => {
-                        v_president1.current.style.display = 'none'
-                        v_president2.current.style.display = 'none'
+                    <button className="nota" type="button" ref={nota2} onClick={(e) => {
+                        const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
+                        if (x == true) {
+                            e.currentTarget.disabled = true
+                            v_president1.current.style.display = 'none'
+                            v_president2.current.style.display = 'none'
+                        }
                     }}>NOTA</button>
                 </div>
 
@@ -97,26 +124,38 @@ function Vote() {
                     <div className="container">
                         <div className="section one" ref={g_s1}>
                             <img src="https://randomuser.me/api/portraits/lego/8.jpg" alt="candidate" />
-                            <b>Arun Pratap Singh</b>
+                            <b>Morjina Khatun</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                g_s2.current.style.display = 'none'
-                                nota3.current.style.display = 'none'
+                                const x = window.confirm(`"Morjina Khatun" is selected. Are You sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    g_s2.current.style.display = 'none'
+                                    nota3.current.style.display = 'none'
+                                }
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={g_s2}>
                             <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="candidate" />
-                            <b>Arun Pratap Singh</b>
+                            <b>Shek Haju Ali</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                g_s1.current.style.display = 'none'
-                                nota3.current.style.display = 'none'
+                                const x = window.confirm(`"Shek Haju Ali" is selected. Are You sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    g_s1.current.style.display = 'none'
+                                    nota3.current.style.display = 'none'
+                                }
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" type="button" ref={nota3} onClick={() => {
-                        g_s1.current.style.display = 'none'
-                        g_s2.current.style.display = 'none'
+                    <button className="nota" type="button" ref={nota3} onClick={(e) => {
+                        const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
+                        if (x == true) {
+                            e.currentTarget.disabled = true
+                            g_s1.current.style.display = 'none'
+                            g_s2.current.style.display = 'none'
+                        }
                     }}>NOTA</button>
                 </div>
 
@@ -125,29 +164,42 @@ function Vote() {
                     <div className="container">
                         <div className="section one" ref={ag_s1}>
                             <img src="https://randomuser.me/api/portraits/lego/2.jpg" alt="candidate" />
-                            <b>Arun Pratap Singh</b>
+                            <b>Avhinas Chetry</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                ag_s2.current.style.display = 'none'
-                                nota4.current.style.display = 'none'
+                                const x = window.confirm(`"Avhinas Chetry" is selected. Are You sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    ag_s2.current.style.display = 'none'
+                                    nota4.current.style.display = 'none'
+                                }
+
                             }}>Vote</button>
                         </div>
                         <div className="section two" ref={ag_s2}>
                             <img src="https://randomuser.me/api/portraits/lego/0.jpg" alt="candidate" />
-                            <b>Pratap Singh</b>
+                            <b>Rahul Sharma</b>
                             <button type="button" onClick={(e) => {
-                                e.target.innerHTML = 'voted'
-                                ag_s1.current.style.display = 'none'
-                                nota4.current.style.display = 'none'
+                                const x = window.confirm(`"Rahul Sharma" is selected. Are You sure ?`)
+                                if (x == true) {
+                                    e.currentTarget.disabled = true
+                                    e.target.innerHTML = 'voted'
+                                    ag_s1.current.style.display = 'none'
+                                    nota4.current.style.display = 'none'
+                                }
                             }}>Vote</button>
                         </div>
                     </div>
-                    <button className="nota" type="button" ref={nota4} onClick={() => {
-                        ag_s1.current.style.display = 'none'
-                        ag_s2.current.style.display = 'none'
+                    <button className="nota" type="button" ref={nota4} onClick={(e) => {
+                        const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
+                        if (x == true) {
+                            e.currentTarget.disabled = true
+                            ag_s1.current.style.display = 'none'
+                            ag_s2.current.style.display = 'none'
+                        }
                     }}>NOTA</button>
                 </div>
-                <button type="submit" className="btn">Submit Vote</button>
+                <button type="submit" className="btn" ref={submitBtn}>Submit Vote</button>
             </form>
         </main>
     )
