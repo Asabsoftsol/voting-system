@@ -4,9 +4,12 @@ import axios from 'axios'
 
 
 function Register() {
+    const [error, setError] = useState(false)
+
     useEffect(() => {
         document.title = 'Registration'
-    })
+    }, [error])
+
     let history = useHistory('')
     const [name, setName] = useState('')
     const [id, setId] = useState('')
@@ -14,39 +17,29 @@ function Register() {
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
 
+
     const handleForm = async (e) => {
         e.preventDefault()
-        history.replace('/vote')
-        // check all input is not empty
-        if (name === '' || id === '' || email === '' || phone === '') {
-            setMessage('pleae fill all detail')
+        console.log(name, email, phone, id)
+        if (name === '' || email === '' || phone === '' || id === '') {
+            setMessage('Please fill all detail.')
+            setError(false)
         }
-        // if (phone.length < 9 || phone.length > 10) {
-        //     setMessage('Pleae enter valid phone number')
-        // }
-        if (id.length < 7 || id.length > 8) {
-            setMessage('Please enter valid registration number')
-        }
-        else {
-            const data = await axios.post('http://localhost:3001/api/register',{
-                name,email,phone,id
+        console.log(error)
+        if (error === true) {
+            //  chnage the address for production mode
+            const data = await axios.post('http://localhost:3001/api/register', {
+                name, email, phone, id
             },
                 {
                     headers: {
-                        'Content-Type':'application/json' 
+                        'Content-Type': 'application/json'
                     }
                 }
             )
             console.log(data)
-            if(data.data.status === 'error'){
+            if (data.data.status === 'error') {
                 setMessage(data.data.msg)
-            }
-            if(data.data.status === 'ok'){
-                setEmail('')
-                setId('')
-                setPhone('')
-                setName('')
-                history.replace('/vote')
             }
         }
     }
@@ -55,12 +48,12 @@ function Register() {
         <div className="registerPage">
             <div className="form">
                 <form onSubmit={handleForm}>
-                    <div className={ message.length > 2 ? 'errorMessage' : false}>
+                    <div className={message.length > 2 ? 'errorMessage' : false}>
                         {message}
                     </div>
                     <input type="text" placeholder="Name"
                         value={name} onChange={(e) => setName(e.target.value)}
-                        required
+                    required
                     />
                     <input type="number" placeholder="Registration number"
                         required
