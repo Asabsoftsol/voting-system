@@ -22,4 +22,12 @@ app.get('/president/nota', async (req, res) => {
     return res.json({ data: totalvote })
 })
 
+
+
+
+app.get('/vice-president/1', async (req, res) => {
+    const totalvote = await vicePre.count({vote:'1'})
+    return res.json({data:totalvote})
+})
+
 module.exports = app
