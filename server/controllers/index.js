@@ -8,24 +8,21 @@ const _evm = require('../model/index')
 
 app.post('/register', async (req, res) => {
     const { name, email, id, phone } = req.body
+    if (phone.length >= 10 && phone.length < 11) {
+        return res.json({ status: 'error', msg: 'Please enter valid phone number' })
+    }
+    const voter = new _evm({ name, id, email, phone })
+    const user = await _evm.find({ id })
 
-    _evm.findOne({ id }, async (err, vote) => {
-        if (!vote) {
-            const voter = new _evm({
-                name, email, id, phone
-            })
-            await voter.save()
-                .then(() => {
-                    return res.json({ status: 'ok' })
-                })
-                .catch(err => {
-                    console.log(err)
-                    return res.json({ status: 'error' })
-                })
-        }else{
-            return res.json({status:'error',msg:'already voted'})
-        }
-    })
+
+    if (user.length === 0) {
+        await voter.save().then(() => {
+            return res.json({ status: 'ok' })
+        }).catch(err => console.log(err))
+    } else {
+        // if user already in database
+        return res.json({ status: 'error', msg: 'You already voted' })
+    }
 })
 
 

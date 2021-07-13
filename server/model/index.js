@@ -7,7 +7,6 @@ const voter = new Schema({
     },
     id: {
         type: "String",
-        unique: true
     },
     email: {
         type: "String",

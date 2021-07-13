@@ -23,8 +23,6 @@ function Vote() {
 
     const submitBtn = useRef()
 
-    // submitBtn.current.disabled = true
-
     const handleVote = async (e) => {
         e.preventDefault()
         console.log(e)
@@ -36,7 +34,7 @@ function Vote() {
             <h1>Vote carefully</h1>
 
             <form onSubmit={handleVote}>
-                <div className="header">
+                <form className="header">
                     <p>President</p>
                     <div className="container">
                         <div className="section one" ref={president1}>
@@ -75,8 +73,7 @@ function Vote() {
                             president2.current.style.display = 'none'
                         }
                     }}>NOTA</button>
-
-                </div>
+                </form>
 
 
                 <div className="header">

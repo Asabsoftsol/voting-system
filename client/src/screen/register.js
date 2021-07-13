@@ -43,7 +43,6 @@ function Register() {
                     }
                 }
             )
-            console.log(data)
             if (data.data.status === 'error') {
                 setMessage(data.data.msg)
             }else{
@@ -52,6 +51,7 @@ function Register() {
                 setMessage('')
                 setName('')
                 setPhone('')
+                alert('Account created.')
                 history.replace('/vote')
             }
         }
