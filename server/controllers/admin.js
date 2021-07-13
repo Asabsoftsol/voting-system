@@ -5,7 +5,7 @@ const pre = require('../model/vote')
 const vicePre = require('../model/vicepresident')
 const gm = require('../model/genralSect')
 const asst = require('../model/assGenSec')
-
+const voter = require('../model/index')
 
 app.get('/president/1', async (req, res) => {
     const totalvote = await pre.countDocuments({ vote: '1' })
@@ -76,7 +76,8 @@ app.get('/reset',async(req,res)=>{
     await vicePre.remove()
     await gm.remove()
     await asst.remove()
-    return res.send({msg:'All votes are reset'})
+    await voter.remove()
+    return res.json({status:'ok',msg:'All votes are reset'})
 })
 
 module.exports = app

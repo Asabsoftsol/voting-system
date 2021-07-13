@@ -147,7 +147,8 @@ function App() {
       <button className="btn" onClick={() => {
         const conf = window.confirm('Are You Sure ?')
         if (conf === true) {
-          axios.get('http://localhost:3001/admin/reset')
+         axios.get('http://localhost:3001/admin/reset')
+          window.location.reload()
         }
       }}>Reset</button>
       <p className="footer">© {new Date().getFullYear()}</p>

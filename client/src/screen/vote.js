@@ -5,14 +5,14 @@ import { vote_API } from '../api'
 function Vote() {
 
     const submitBtn = useRef()
-  
-    
-    
+
+
+
     useEffect(() => {
         document.title = "Vote"
         submitBtn.current.style.display = 'none'
-    },[])
-    
+    }, [])
+
     const history = useHistory()
 
     const president1 = useRef()
@@ -28,10 +28,10 @@ function Vote() {
     const nota3 = useRef()
     const nota4 = useRef()
 
- 
 
 
     
+
 
     return (
         <main>
@@ -215,7 +215,9 @@ function Vote() {
                         }
                     }}>NOTA</button>
                 </div>
-                <button type="submit" className="btn" ref={submitBtn}>Submit Vote</button>
+                <button type="submit" className="btn" ref={submitBtn} onClick={()=>{
+                     history.replace('/thanks')
+                }}>Submit Vote</button>
             </form>
         </main>
     )
