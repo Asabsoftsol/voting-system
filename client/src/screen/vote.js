@@ -4,11 +4,15 @@ import { vote_API } from '../api'
 
 function Vote() {
 
-
+    const submitBtn = useRef()
+  
+    
+    
     useEffect(() => {
         document.title = "Vote"
-    })
-
+        submitBtn.current.style.display = 'none'
+    },[])
+    
     const history = useHistory()
 
     const president1 = useRef()
@@ -24,20 +28,17 @@ function Vote() {
     const nota3 = useRef()
     const nota4 = useRef()
 
-    const submitBtn = useRef()
+ 
 
-    const handleVote = async (e) => {
-        e.preventDefault()
-        console.log(e)
-        history.replace('/thanks')
-    }
+
+    
 
     return (
         <main>
             <h1>Vote carefully</h1>
 
-            <form onSubmit={handleVote}>
-                <form className="header">
+            <form>
+                <div className="header">
                     <p>President</p>
                     <div className="container">
                         <div className="section one" ref={president1}>
@@ -47,7 +48,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Ram Kundu" is selected. Are You Sure ?`)
                                 if (x === true) {
-                                    vote_API({voteURL:'president/1',vote:'1'})
+                                    vote_API({ voteURL: 'president/1', vote: '1' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     president2.current.style.display = 'none'
@@ -61,7 +62,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Abhijit Das" is selected. Are You sure ?`)
                                 if (x === true) {
-                                    vote_API({voteURL:'president/1',vote:'2'})
+                                    vote_API({ voteURL: 'president/1', vote: '2' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     president1.current.style.display = 'none'
@@ -73,13 +74,13 @@ function Vote() {
                     <button className="nota" ref={nota1} type="button" onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
                         if (x === true) {
-                            vote_API({voteURL:'president/1',vote:'0'})
+                            vote_API({ voteURL: 'president/1', vote: '0' })
                             e.currentTarget.disabled = true
                             president1.current.style.display = 'none'
                             president2.current.style.display = 'none'
                         }
                     }}>NOTA</button>
-                </form>
+                </div>
 
 
                 <div className="header">
@@ -91,6 +92,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Jina Sharma" is selected. Are You sure ?`)
                                 if (x === true) {
+                                    vote_API({ voteURL: 'v-president/1', vote: '1' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     v_president2.current.style.display = 'none'
@@ -104,6 +106,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Dipika Devi" is selected. Are You sure ?`)
                                 if (x === true) {
+                                    vote_API({ voteURL: 'v-president/1', vote: '2' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     v_president1.current.style.display = 'none'
@@ -115,6 +118,7 @@ function Vote() {
                     <button className="nota" type="button" ref={nota2} onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
                         if (x === true) {
+                            vote_API({ voteURL: 'v-president/1', vote: '0' })
                             e.currentTarget.disabled = true
                             v_president1.current.style.display = 'none'
                             v_president2.current.style.display = 'none'
@@ -131,6 +135,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Morjina Khatun" is selected. Are You sure ?`)
                                 if (x === true) {
+                                    vote_API({ voteURL: 'genralSecretary/1', vote: '1' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     g_s2.current.style.display = 'none'
@@ -144,6 +149,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Shek Haju Ali" is selected. Are You sure ?`)
                                 if (x === true) {
+                                    vote_API({ voteURL: 'genralSecretary/1', vote: '2' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     g_s1.current.style.display = 'none'
@@ -155,6 +161,7 @@ function Vote() {
                     <button className="nota" type="button" ref={nota3} onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
                         if (x === true) {
+                            vote_API({ voteURL: 'genralSecretary/1', vote: '0' })
                             e.currentTarget.disabled = true
                             g_s1.current.style.display = 'none'
                             g_s2.current.style.display = 'none'
@@ -171,10 +178,12 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Avhinas Chetry" is selected. Are You sure ?`)
                                 if (x === true) {
+                                    vote_API({ voteURL: 'asst-genralSecretary/1', vote: '1' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     ag_s2.current.style.display = 'none'
                                     nota4.current.style.display = 'none'
+                                    submitBtn.current.style.display = 'block'
                                 }
 
                             }}>Vote</button>
@@ -185,10 +194,12 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Rahul Sharma" is selected. Are You sure ?`)
                                 if (x === true) {
+                                    vote_API({ voteURL: 'asst-genralSecretary/1', vote: '2' })
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     ag_s1.current.style.display = 'none'
                                     nota4.current.style.display = 'none'
+                                    submitBtn.current.style.display = 'block'
                                 }
                             }}>Vote</button>
                         </div>
@@ -196,9 +207,11 @@ function Vote() {
                     <button className="nota" type="button" ref={nota4} onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
                         if (x === true) {
+                            vote_API({ voteURL: 'asst-genralSecretary/1', vote: '0' })
                             e.currentTarget.disabled = true
                             ag_s1.current.style.display = 'none'
                             ag_s2.current.style.display = 'none'
+                            submitBtn.current.style.display = 'block'
                         }
                     }}>NOTA</button>
                 </div>

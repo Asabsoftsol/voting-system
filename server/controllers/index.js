@@ -30,6 +30,7 @@ app.post('/register', async (req, res) => {
 app.post('/president/1', async (req, res) => {
     const { vote } = req.body
     const President = new _president({ vote })
+    console.log(President)
     await President.save()
         .then(() => {
             return res.json({ status: 'ok' })
@@ -40,6 +41,7 @@ app.post('/president/1', async (req, res) => {
 app.post('/v-president/1', async (req, res) => {
     const { vote } = req.body
     const President = new _vPresident({ vote })
+    console.log(President)
     await President.save()
         .then(() => {
             return res.json({ status: 'ok' })
@@ -50,6 +52,7 @@ app.post('/v-president/1', async (req, res) => {
 app.post('/genralSecretary/1', async (req, res) => {
     const { vote } = req.body
     const President = new _genralSec({ vote })
+    console.log(President)
     await President.save()
         .then(() => {
             return res.json({ status: 'ok' })
@@ -60,6 +63,7 @@ app.post('/genralSecretary/1', async (req, res) => {
 app.post('/asst-genralSecretary/1', async (req, res) => {
     const { vote } = req.body
     const President = new _asstgenral({ vote })
+    console.log(President)
     await President.save()
         .then(() => {
             return res.json({ status: 'ok' })

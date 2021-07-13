@@ -22,7 +22,7 @@ mongoose.connect(process.env.URI,{
 
 
 app.use('/api',require('./controllers/index'))
-
+app.use('/admin',require('./controllers/admin'))
 
 
 const port = process.env.PORT || 3001
