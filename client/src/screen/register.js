@@ -20,12 +20,18 @@ function Register() {
 
     const handleForm = async (e) => {
         e.preventDefault()
-        console.log(name, email, phone, id)
         if (name === '' || email === '' || phone === '' || id === '') {
             setMessage('Please fill all detail.')
             setError(false)
+        } else {
+            setError(true)
         }
-        console.log(error)
+        if (id.length >= 8 && id.length <= 8) {
+            setError(true)
+        } else {
+            setMessage('Please Enter valid register id')
+            setError(false)
+        }
         if (error === true) {
             //  chnage the address for production mode
             const data = await axios.post('http://localhost:3001/api/register', {
@@ -40,6 +46,13 @@ function Register() {
             console.log(data)
             if (data.data.status === 'error') {
                 setMessage(data.data.msg)
+            }else{
+                setError('')
+                setId('')
+                setMessage('')
+                setName('')
+                setPhone('')
+                history.replace('/vote')
             }
         }
     }
@@ -53,7 +66,7 @@ function Register() {
                     </div>
                     <input type="text" placeholder="Name"
                         value={name} onChange={(e) => setName(e.target.value)}
-                    required
+                        required
                     />
                     <input type="number" placeholder="Registration number"
                         required
