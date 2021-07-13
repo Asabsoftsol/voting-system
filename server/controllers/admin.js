@@ -26,7 +26,8 @@ app.get('/president/nota', async (req, res) => {
 
 
 app.get('/vice-president/1', async (req, res) => {
-    const totalvote = await vicePre.count({vote:'1'})
+    const t = await vicePre.find({vote:'1'})
+    const totalvote = t.length
     return res.json({data:totalvote})
 })
 
