@@ -24,11 +24,59 @@ app.get('/president/nota', async (req, res) => {
 
 
 
-
 app.get('/vice-president/1', async (req, res) => {
-    const t = await vicePre.find({vote:'1'})
-    const totalvote = t.length
-    return res.json({data:totalvote})
+    const totalvote = await vicePre.countDocuments({ vote: '1' })
+    return res.json({ data: totalvote })
+})
+app.get('/vice-president/2', async (req, res) => {
+    const totalvote = await vicePre.countDocuments({ vote: '2' })
+    return res.json({ data: totalvote })
+})
+app.get('/vice-president/nota', async (req, res) => {
+    const totalvote = await vicePre.countDocuments({ vote: '0' })
+    return res.json({ data: totalvote })
+})
+
+
+
+app.get('/gm/1', async (req, res) => {
+    const totalvote = await gm.countDocuments({ vote: '1' })
+    return res.json({ data: totalvote })
+})
+app.get('/gm/2', async (req, res) => {
+    const totalvote = await gm.countDocuments({ vote: '2' })
+    return res.json({ data: totalvote })
+})
+app.get('/gm/nota', async (req, res) => {
+    const totalvote = await gm.countDocuments({ vote: '0' })
+    return res.json({ data: totalvote })
+})
+
+
+
+app.get('/a-gm/1', async (req, res) => {
+    const totalvote = await asst.countDocuments({ vote: '1' })
+    return res.json({ data: totalvote })
+})
+app.get('/a-gm/2', async (req, res) => {
+    const totalvote = await asst.countDocuments({ vote: '2' })
+    return res.json({ data: totalvote })
+})
+app.get('/a-gm/nota', async (req, res) => {
+    const totalvote = await asst.countDocuments({ vote: '0' })
+    return res.json({ data: totalvote })
+})
+
+
+
+
+// reset all data
+app.get('/reset',async(req,res)=>{
+    await pre.remove()
+    await vicePre.remove()
+    await gm.remove()
+    await asst.remove()
+    return res.send({msg:'All votes are reset'})
 })
 
 module.exports = app
