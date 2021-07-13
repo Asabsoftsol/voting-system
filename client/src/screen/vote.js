@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
+import { vote_API } from '../api'
 
 function Vote() {
+
+
     useEffect(() => {
         document.title = "Vote"
     })
@@ -44,6 +47,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Ram Kundu" is selected. Are You Sure ?`)
                                 if (x === true) {
+                                    vote_API({voteURL:'president/1',vote:'1'})
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     president2.current.style.display = 'none'
@@ -57,6 +61,7 @@ function Vote() {
                             <button type="button" onClick={(e) => {
                                 const x = window.confirm(`"Abhijit Das" is selected. Are You sure ?`)
                                 if (x === true) {
+                                    vote_API({voteURL:'president/1',vote:'2'})
                                     e.currentTarget.disabled = true
                                     e.target.innerHTML = 'voted'
                                     president1.current.style.display = 'none'
@@ -68,6 +73,7 @@ function Vote() {
                     <button className="nota" ref={nota1} type="button" onClick={(e) => {
                         const x = window.confirm(`"NOTA" is selected. Are You sure ?`)
                         if (x === true) {
+                            vote_API({voteURL:'president/1',vote:'0'})
                             e.currentTarget.disabled = true
                             president1.current.style.display = 'none'
                             president2.current.style.display = 'none'
