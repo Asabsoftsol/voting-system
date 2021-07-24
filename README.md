@@ -1,4 +1,4 @@
-# voting-systemf
+# voting-system
 
 ## pre-requirement 
 - node.js
