@@ -5,7 +5,7 @@
 
 node.js should be install to run this project in your local environment.
 
-to check node.js is install or not type these command in terminal or cmd 
+to check node.js is install or not type these command in terminal or cmd .
 
 `node --version`
 
@@ -14,9 +14,13 @@ it its there it will give the version of node.js which is install in your system
 after installing close your termial and repon it then type same command to check it install or not.
 
 
+## how to run
+
+navigate to every folder individually and type `npm start` command in terminal or cmd.
+
 ## scripts
 
-to run the project naviate to project folder and type these command
+to run the project naviate to project folder and type these command.
 
 1. `npm install`
 2. `npm start`
